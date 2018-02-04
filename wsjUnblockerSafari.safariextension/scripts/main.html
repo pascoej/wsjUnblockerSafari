@@ -1,0 +1,9 @@
+<script>
+safari.application.addEventListener('beforeNavigate', function(event) {
+	if (event.url.indexOf("wsj.com/articles/") > 0 && event.url.indexOf("?fb") < 0) {
+		const newUrl = "https://www.facebook.com/flx/warn/?u=" + event.url + "?fb";
+		event.preventDefault();
+		event.target.url=newUrl;
+	}	
+}, true);
+</script>
